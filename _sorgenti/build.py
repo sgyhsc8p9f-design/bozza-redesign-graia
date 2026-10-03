@@ -29,7 +29,7 @@ def page(fname, title, desc, body):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 <div class="bozza"><b>Bozza di proposta</b>: non è il sito ufficiale di GRAIA. Testi e immagini sono ripresi da graia.eu a solo scopo dimostrativo. <a href="proposta.html" style="color:#fff">Cosa cambia →</a></div>
@@ -171,13 +171,13 @@ pages["index.html"] = page(
     </div>
     <div class="righe-progetti">
       <article class="riga-progetto">
-        <img src="img/prospittico.png" alt="Loghi del progetto ProSpIttiCo: Unione europea, Ministero dell'Università e della Ricerca, Italia domani, NBFC" loading="lazy">
+        <img src="img/prospittico.png?v=2" alt="Loghi del progetto ProSpIttiCo: Unione europea, Ministero dell'Università e della Ricerca, Italia domani, NBFC" loading="lazy">
         <p class="meta">PNRR · National Biodiversity Future Center</p>
         <h3>ProSpIttiCo</h3>
         <p>Un sistema per monitorare le specie ittiche che transitano nei passaggi per pesci. GRAIA è l'unico soggetto beneficiario. La piattaforma con la versione beta è in arrivo.</p>
       </article>
       <article class="riga-progetto">
-        <img src="img/eco4ticino.png" alt="ECO4TICINO, progetto Interreg Italia-Svizzera" loading="lazy">
+        <img src="img/eco4ticino.png?v=2" alt="ECO4TICINO, progetto Interreg Italia-Svizzera" loading="lazy">
         <p class="meta">Interreg Italia–Svizzera · 2025–2027</p>
         <h3>ECO4TICINO</h3>
         <p>Un corridoio ecologico da gestire insieme, oltre confine, lungo il fiume Ticino.</p>
@@ -218,7 +218,7 @@ pages["index.html"] = page(
       <li>CNR-IRSA</li>
       <li>ENEL, Edison, A2A, IREN</li>
     </ul>
-    <p style="margin-top:1.6rem"><a class="link-freccia" href="portfolio.html">L'elenco completo</a></p>
+    <p style="margin-top:1.6rem"><a class="link-freccia" href="portfolio.html#committenti">L'elenco completo</a> &nbsp; <a class="link-freccia" href="portfolio.html#casi">I casi</a></p>
   </div>
 </section>
 
@@ -237,10 +237,10 @@ pages["index.html"] = page(
 )
 
 # ---------------------------------------------------------------- ATTIVITA
-def blocco(img, alt, n, titolo, testo, elenco):
+def blocco(img, alt, n, titolo, testo, elenco, pos="50% 50%", poster=False):
     li = "".join(f"<li>{x}</li>" for x in elenco)
     return f"""<div class="sezione-attivita">
-  <figure class="fig" style="margin:0"><img src="img/{img}" alt="{alt}" loading="lazy"></figure>
+  <figure class="fig{' poster' if poster else ''}" style="margin:0"><img src="img/{img}" alt="{alt}" loading="lazy" style="object-position:{pos}"></figure>
   <div>
     <p class="eyebrow">{n}</p>
     <h2 style="font-size:2rem;margin-bottom:1rem">{titolo}</h2>
@@ -262,22 +262,22 @@ pages["attivita.html"] = page(
     + '<section style="padding-top:2rem"><div class="wrap">'
     + blocco("luccio.jpg", "Un luccio tra le piante acquatiche", "01", "Ittiologia e gestione della fauna ittica",
              "Il mestiere da cui siamo partiti: conoscere i pesci per proteggerli e gestirli.",
-             ["Carte ittiche e piani ittici", "Conservazione delle specie", "Incubatoi ittici e acquacoltura", "Pesca sportiva e professionale"])
+             ["Carte ittiche e piani ittici", "Conservazione delle specie", "Incubatoi ittici e acquacoltura", "Pesca sportiva e professionale"], pos="35% 50%")
     + blocco("lago-sede.jpg", "Il lago di Comabbio visto dalla riva", "02", "Monitoraggio e analisi ambientale",
              "Dati raccolti sul campo, letti con rigore statistico, per capire lo stato di fiumi e laghi.",
-             ["Biomonitoraggio e limnologia", "Analisi statistica", "Batimetria", "Inquinamento delle acque, salute umana"])
+             ["Biomonitoraggio e limnologia", "Analisi statistica", "Batimetria", "Inquinamento delle acque, salute umana"], pos="72% 50%")
     + blocco("riqualificazione.jpg", "Un intervento di ingegneria naturalistica con tronchi e massi sulla riva", "03", "Riqualificazione fluviale e lacustre",
              "Interventi che restituiscono spazio e funzioni ecologiche all'acqua, anche con BLU Progetti.",
-             ["Ripristino della continuità fluviale", "Riqualificazione ecologica di rive e ambienti lacustri", "Rimboschimento e fitodepurazione", "Percorsi ciclopedonali e greenway"])
+             ["Ripristino della continuità fluviale", "Riqualificazione ecologica di rive e ambienti lacustri", "Rimboschimento e fitodepurazione", "Percorsi ciclopedonali e greenway"], pos="30% 62%")
     + blocco("torrente.jpg", "Un torrente di acqua turchese in una forra di roccia", "04", "Passaggi per pesci e idroelettrico",
              "Dove l'acqua incontra una diga o una traversa, i pesci devono poter passare.",
-             ["Progettazione dei passaggi per pesci", "Monitoraggio delle migrazioni ittiche", "Deflusso minimo vitale (DMV)", "Svasi e valutazioni di impatto"])
+             ["Progettazione dei passaggi per pesci", "Monitoraggio delle migrazioni ittiche", "Deflusso minimo vitale (DMV)", "Svasi e valutazioni di impatto"], pos="50% 60%")
     + blocco("lifeel.jpg", "Locandina di LIFEEL Days", "05", "Programmi LIFE e ricerca europea",
              "Progetti cofinanziati dall'Unione europea per specie e habitat. Il più recente: LIFEEL, per l'anguilla europea.",
-             ["Programma LIFE", "Cambiamenti climatici", "Reti ecologiche", "Ricerca: ProSpIttiCo, ECO4TICINO"])
+             ["Programma LIFE", "Cambiamenti climatici", "Reti ecologiche", "Ricerca: ProSpIttiCo, ECO4TICINO"], pos="50% 50%", poster=True)
     + blocco("didattica.jpg", "Un libro gigante illustrato sul ciclo dell'acqua, allestito su un molo", "06", "Didattica e divulgazione ambientale",
              "Raccontare l'acqua a chi la vive: scuole, cittadini, pescatori.",
-             ["Didattica ambientale", "Allestimenti e libri illustrati", "Eventi e incontri sul territorio"])
+             ["Didattica ambientale", "Allestimenti e libri illustrati", "Eventi e incontri sul territorio"], pos="50% 55%")
     + "</div></section>",
 )
 
@@ -287,16 +287,81 @@ def gruppo(titolo, voci):
     return f'<div class="gruppo"><h3>{titolo}</h3><ul class="committenti">{li}</ul></div>'
 
 
+
+CASI = """<section style="padding-top:2rem" id="casi"><div class="wrap">
+  <p class="eyebrow">Casi</p>
+  <h2 style="max-width:20ch;margin-bottom:2.5rem">Progetti raccontati da vicino.</h2>
+
+  <article class="caso-grande">
+    <figure class="fig" style="margin:0"><img src="img/storione.jpg" alt="Uno storione cobice che nuota su un fondale di ghiaia e alghe" loading="lazy" style="object-position:30% 50%"><figcaption>Storione cobice. Foto: archivio GRAIA.</figcaption></figure>
+    <div>
+      <p class="meta">LIFE CON.FLU.PO · LIFE11 NAT/IT/188 · concluso il 30 giugno 2018</p>
+      <h3>Aprire il Po allo storione cobice</h3>
+      <p>Il progetto ha ripristinato la connettività nel bacino del Po, riaprendo la via migratoria allo storione cobice (<i>Acipenser naccarii</i>) e ad altre dieci specie ittiche dell'Allegato II della direttiva Habitat.</p>
+      <p>Il 3 aprile 2019 il primo storione cobice, lungo circa un metro e mezzo, è transitato nel passaggio per pesci di Isola Serafini: la specie-bandiera del progetto ha dimostrato di usare il corridoio del Po grazie a quella struttura.</p>
+      <dl class="scheda">
+        <dt>Ambito</dt><dd>Passaggi per pesci, continuità fluviale</dd>
+        <dt>Programma</dt><dd>LIFE, Unione europea</dd>
+        <dt>Ruolo</dt><dd>Partner del progetto</dd>
+      </dl>
+      <a class="link-freccia" href="https://www.graia.eu/isola-serafini-lo-storione-cobice-ce/">Il video del passaggio</a>
+    </div>
+  </article>
+
+  <div class="casi">
+    <article class="caso">
+      <img src="img/lifeel.jpg" alt="Locandina di LIFEEL Days" loading="lazy" class="poster-caso">
+      <p class="meta">LIFE19 NAT/IT/000851 · chiuso con LIFEEL Days, 20 aprile 2026</p>
+      <h3>LIFEEL: salvare l'anguilla europea</h3>
+      <p>Misure urgenti nel Mediterraneo orientale per la conservazione a lungo termine dell'anguilla europea (<i>Anguilla anguilla</i>), specie in pericolo. La chiusura è stata un evento a Comacchio per restituire i risultati al territorio.</p>
+      <p class="ruolo">Ruolo: partner del progetto</p>
+    </article>
+    <article class="caso">
+      <img src="img/prospittico.png?v=2" alt="Loghi del progetto ProSpIttiCo" loading="lazy" class="logo-caso larga">
+      <p class="meta">PNRR · NBFC · dal 1 dicembre 2024 al 30 novembre 2025</p>
+      <h3>ProSpIttiCo: un sistema che riconosce i pesci</h3>
+      <p>Sviluppo e prova di un sistema di monitoraggio che riconosce le specie ittiche in transito nei passaggi per pesci. Il gruppo di lavoro unisce il personale GRAIA, una società di sviluppo informatico e tre professionisti scelti per il progetto.</p>
+      <p class="ruolo">Ruolo: unico soggetto beneficiario</p>
+    </article>
+    <article class="caso">
+      <img src="img/eco4ticino.png?v=2" alt="ECO4TICINO, progetto Interreg Italia-Svizzera" loading="lazy" class="logo-caso">
+      <p class="meta">Interreg Italia–Svizzera · progetto 0200063 · 2025–2027</p>
+      <h3>ECO4TICINO: un corridoio oltre confine</h3>
+      <p>Gestione comune del corridoio ecologico del fiume Ticino tra Italia e Svizzera, per proteggere la natura, la biodiversità e le infrastrutture verdi.</p>
+      <p class="ruolo">Ruolo: da specificare</p>
+    </article>
+    <article class="caso">
+      <img src="img/geriko.jpg" alt="Interreg Italia-Svizzera" loading="lazy" class="logo-caso">
+      <p class="meta">Interreg V-A Italia–Svizzera 2014–2020</p>
+      <h3>GE.RI.KO. MERA: l'acqua del Mera, di qua e di là</h3>
+      <p>Italia e Svizzera condividono il bacino del Mera ma hanno regole diverse. Il progetto prepara una strategia comune, con attenzione al trasporto solido dopo la frana in Val Bondasca, il ripristino del corridoio ecologico nei siti Natura 2000 e linee guida per la governance transfrontaliera.</p>
+      <p class="ruolo">Ruolo: BLU Progetti, partner</p>
+    </article>
+    <article class="caso doppio">
+      <p class="meta">Altri progetti del Programma LIFE</p>
+      <h3>Una lunga esperienza con LIFE</h3>
+      <ul>
+        <li><strong>LIFE PREDATOR</strong> (in corso): prevenire, individuare e contrastare la diffusione del siluro (<i>Silurus glanis</i>) nei laghi dell'Europa meridionale.</li>
+        <li><strong>IdroLIFE</strong> (concluso il 15 luglio 2021): conservazione della fauna d'acqua dolce nei corridoi ecologici del Verbano-Cusio-Ossola.</li>
+        <li><strong>LifeTicinoBiosource</strong> (concluso il 31 luglio 2021): ripristino delle aree sorgive per la biodiversità nel Parco del Ticino.</li>
+      </ul>
+    </article>
+  </div>
+  <p class="todo" style="margin-top:2.5rem">Le schede riprendono i fatti già pubblicati sul sito di GRAIA. Per la versione definitiva servono, per ogni caso, foto, dati e risultati forniti da GRAIA (ruolo esatto, lunghezza dei tratti riqualificati, specie monitorate, ecc.).</p>
+</div></section>"""
+
+
 pages["portfolio.html"] = page(
     "portfolio.html",
     "Portfolio · GRAIA",
-    "I principali committenti dei lavori realizzati da GRAIA srl.",
+    "Progetti e committenti di GRAIA srl.",
     interna(
         "Portfolio",
-        "Chi si è affidato a noi.",
-        "Un elenco dei principali committenti dei lavori realizzati in questi anni, raggruppati per tipo.",
+        "Cosa abbiamo fatto, e per chi.",
+        "Alcuni progetti raccontati da vicino, poi l'elenco dei committenti dei lavori realizzati in questi anni, raggruppati per tipo.",
     )
-    + '<section style="padding-top:2rem"><div class="wrap">'
+    + CASI
+    + '<section class="pallida" id="committenti"><div class="wrap"><p class="eyebrow">Committenti</p><h2 style="margin-bottom:2.5rem">I nostri clienti</h2>'
     + gruppo("Ministeri, autorità e agenzie", [
         "Ministero delle Politiche Agricole, Alimentari e Forestali, Direzione Generale della Pesca e dell'Acquacoltura",
         "Autorità di Bacino del Fiume Po",
@@ -330,7 +395,7 @@ pages["portfolio.html"] = page(
         "Consorzio del Ticino", "Consorzio Venezia Nuova", "Navigli Lombardi", "Holcim", "Technital",
         "CIRF, Centro Italiano di Riqualificazione Fluviale", "FIPSAS", "LIPU", "Fondazione Lombardia per l'Ambiente",
     ])
-    + '<p class="todo" style="margin-top:3rem">Nella versione definitiva: ogni committente con il lavoro svolto, e una selezione di casi con foto e risultati. Oggi il sito mostra solo l\'elenco dei nomi.</p>'
+    + '<p class="todo" style="margin-top:3rem">Il sito attuale mostra solo i nomi. Nella versione definitiva ogni committente potrebbe rimandare ai casi in cui ha lavorato con GRAIA.</p>'
     + "</div></section>",
 )
 
@@ -345,7 +410,7 @@ pages["blu-progetti.html"] = page(
         "Dal maggio 2006 gli stessi soci di GRAIA hanno costituito BLU Progetti srl: progettazione e direzione lavori per soggetti pubblici e privati, nel campo della riqualificazione ecologica, ecosistemica e ambientale.",
     )
     + """<section style="padding-top:2rem"><div class="wrap due">
-  <figure class="fig" style="margin:0"><img src="img/riqualificazione.jpg" alt="Intervento di ingegneria naturalistica con tronchi e massi" width="1600" height="1200"><figcaption>Intervento di riqualificazione di una riva.</figcaption></figure>
+  <figure class="fig" style="margin:0"><img src="img/riqualificazione.jpg" alt="Intervento di ingegneria naturalistica con tronchi e massi" width="1600" height="1200" style="object-position:30% 62%"><figcaption>Intervento di riqualificazione di una riva.</figcaption></figure>
   <div>
     <h2 style="margin-bottom:1rem">Cosa fa BLU Progetti</h2>
     <p>Dove GRAIA studia e monitora, BLU Progetti progetta e segue i cantieri. Le due società condividono soci, competenze e sede, e lavorano spesso sugli stessi progetti.</p>
@@ -393,7 +458,7 @@ pages["chi-siamo.html"] = page(
     <p>Il rapporto di ascolto, collaborazione e trasparenza che si è creato nel gruppo favorisce un vero lavoro di squadra, in cui tutti condividono motivazione, obiettivi e metodi, nel rispetto di ruoli e regole definiti.</p>
     <p style="font-size:.88rem;color:var(--grigio)">La società è iscritta allo Schedario Anagrafe Nazionale Ricerche del Ministero dell'Università e della Ricerca, codice 302816CX.</p>
   </div>
-  <figure class="fig" style="margin:0"><img src="img/lago-sede.jpg" alt="La sponda del lago di Comabbio a Varano Borghi" width="1600" height="880"><figcaption>Il lago di Comabbio: la sede è a pochi metri dall'acqua.</figcaption></figure>
+  <figure class="fig" style="margin:0"><img src="img/lago-sede.jpg" alt="La sponda del lago di Comabbio a Varano Borghi" width="1600" height="880" style="object-position:72% 50%"><figcaption>Il lago di Comabbio: la sede è a pochi metri dall'acqua.</figcaption></figure>
 </div></section>
 <section class="pallida"><div class="wrap">
   <p class="eyebrow">I soci fondatori</p>
@@ -472,7 +537,7 @@ pages["proposta.html"] = page(
     <tbody>
       <tr><td>Prima impressione</td><td>Slider con la locandina del progetto in corso; chi arriva non capisce subito cosa fa GRAIA.</td><td>Un'unica frase e una foto vera (il luccio), poi i progetti. I progetti in corso restano visibili, più in basso.</td></tr>
       <tr><td>Le attività</td><td>Nuvola di una cinquantina di tag da filtrare (da «Acquacoltura» a «VIA»).</td><td>Sei ambiti con una frase ciascuno, i tag restano come dettaglio dentro ogni ambito.</td></tr>
-      <tr><td>Portfolio</td><td>Muro di testo con i nomi dei committenti.</td><td>Committenti raggruppati per tipo. Passo successivo: schede di caso con foto e risultati.</td></tr>
+      <tr><td>Portfolio</td><td>Muro di testo con i nomi dei committenti.</td><td>Sei casi raccontati da vicino (storione nel Po, anguilla, ProSpIttiCo…), poi i committenti raggruppati per tipo.</td></tr>
       <tr><td>Team</td><td>Schede lunghe in una pagina unica.</td><td>I tre soci con ruolo e motto in evidenza; il resto del team in una lista filtrabile (da fare).</td></tr>
       <tr><td>Lettura</td><td>Testo piccolo (10 px di base), grigio chiaro, menu azzurro con testo bianco poco leggibile.</td><td>Testo da 17 px, contrasto verificato, menu su una riga con voce attiva sottolineata.</td></tr>
       <tr><td>Telefono</td><td>Layout adattato in modo parziale.</td><td>Pensato prima per il telefono: menu a scomparsa, colonne che si impilano.</td></tr>

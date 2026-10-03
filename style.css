@@ -126,10 +126,12 @@ section.acqua{background:var(--acqua-chiaro)}
 
 /* blocchi di testo e immagini */
 .testo-lungo{max-width:62ch}
-.fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.fig.poster img{aspect-ratio:auto;object-fit:contain}
 .fig figcaption{font-size:.8rem;color:var(--grigio);margin-top:.5rem}
 .coppia{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .sezione-attivita{display:grid;grid-template-columns:5fr 6fr;gap:clamp(1.5rem,5vw,4rem);padding:3rem 0;border-top:1px solid var(--linea);align-items:start}
+.sezione-attivita:nth-of-type(even){grid-template-columns:6fr 5fr}
 .sezione-attivita:nth-of-type(even) .fig{order:2}
 .sezione-attivita ul{padding-left:1.1rem;color:var(--grigio)}
 .sezione-attivita li{margin:.25rem 0}
@@ -173,6 +175,7 @@ footer.site .partner img{height:34px;background:#fff;padding:.35rem .6rem;border
   .hero .testo{padding:3rem 28px}
   .hero .foto{min-height:300px;order:-1}
   .due,.progetto-grande,.blu,.sezione-attivita,.righe-progetti,.soci,footer.site .griglia{grid-template-columns:1fr}
+  .sezione-attivita:nth-of-type(even){grid-template-columns:1fr}
   .sezione-attivita:nth-of-type(even) .fig{order:0}
   .sticky{position:static}
   .attivita li{grid-template-columns:2.5rem 1fr}
@@ -184,3 +187,30 @@ footer.site .partner img{height:34px;background:#fff;padding:.35rem .6rem;border
   .confronto{display:block;overflow-x:auto}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* schede di caso */
+.caso-grande{display:grid;grid-template-columns:6fr 5fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-bottom:3.5rem}
+.caso-grande h3{font-size:2rem;margin-bottom:1rem}
+.meta{font-size:.82rem;color:var(--grigio);margin-bottom:.6rem}
+.scheda{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.4rem;margin:1.4rem 0;padding:1rem 0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);font-size:.92rem}
+.scheda dt{font-weight:600;color:var(--grigio)}
+.scheda dd{margin:0}
+.casi{display:grid;grid-template-columns:1fr 1fr;gap:3rem 3rem;border-top:1px solid var(--inchiostro);padding-top:2.5rem}
+.caso img{width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:1.1rem}
+.caso img.logo-caso{object-fit:contain;object-position:left center;background:#fff;border:1px solid var(--linea);padding:.8rem 1rem}
+.caso h3{margin-bottom:.6rem}
+.caso p{font-size:.98rem;color:var(--grigio)}
+.caso .ruolo{font-weight:600;color:var(--verde-scuro);font-size:.88rem}
+.caso ul{padding-left:1.1rem;margin:0}
+.caso li{margin:.5rem 0;font-size:.98rem;color:var(--grigio)}
+.caso li strong{color:var(--inchiostro)}
+.caso.doppio{background:var(--acqua-pallido);padding:1.6rem}
+@media (max-width:920px){.caso-grande,.casi{grid-template-columns:1fr}}
+.caso.doppio{grid-column:1/-1}
+.caso.doppio ul{columns:3;column-gap:2.5rem;list-style:none;padding:0}
+.caso.doppio li{break-inside:avoid;margin:0 0 1rem}
+.caso img.logo-caso{aspect-ratio:16/9;object-fit:contain;object-position:center}
+@media (max-width:920px){.caso.doppio ul{columns:1}}
+.caso img.logo-caso.larga{aspect-ratio:auto;padding:1.4rem 1rem}
+.casi{align-items:start}
+.caso img.poster-caso{aspect-ratio:auto;object-fit:contain}
