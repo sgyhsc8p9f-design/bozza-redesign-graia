@@ -5,23 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Chi siamo · GRAIA</title>
-<meta name="description" content="Tre soci fondatori e più di 35 tra dipendenti e collaboratori: la storia di GRAIA dal 1991.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<meta name="description" content="Tre soci fondatori e più di 35 tra dipendenti e collaboratori: la storia e il team di GRAIA dal 1991.">
+<meta property="og:title" content="Chi siamo · GRAIA">
+<meta property="og:description" content="Tre soci fondatori e più di 35 tra dipendenti e collaboratori: la storia e il team di GRAIA dal 1991.">
+<meta property="og:image" content="img/luccio.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
 <div class="bozza"><b>Bozza di proposta</b>: non è il sito ufficiale di GRAIA. Testi e immagini sono ripresi da graia.eu a solo scopo dimostrativo. <a href="proposta.html" style="color:#fff">Cosa cambia →</a></div>
 <header class="site">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="GRAIA, home"><img src="img/logo.png" alt="GRAIA" width="145" height="58"></a>
     <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
     <nav class="main" id="menu" aria-label="Principale"><ul><li><a href="attivita.html">Attività</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blu-progetti.html">BLU Progetti</a></li><li><a href="news.html">News</a></li><li><a href="chi-siamo.html" aria-current=page>Chi siamo</a></li><li><a href="contatti.html">Contatti</a></li></ul></nav>
-    <span class="lang"><b>IT</b> · EN</span>
+    <span class="lang"><a href="cerca.html">Cerca</a> &nbsp;·&nbsp; <b>IT</b> · <a href="en/chi-siamo.html" hreflang="en" lang="en">EN</a></span>
   </div>
 </header>
-<main>
+<main id="contenuto">
 <section class="hero interna" style="padding:0">
   <div class="testo">
     <p class="eyebrow">Chi siamo</p>
@@ -38,30 +41,113 @@
   <figure class="fig" style="margin:0"><img src="img/lago-sede.jpg" alt="La sponda del lago di Comabbio a Varano Borghi" width="1600" height="880" style="object-position:72% 50%"><figcaption>Il lago di Comabbio: la sede è a pochi metri dall'acqua.</figcaption></figure>
 </div></section>
 <section class="pallida"><div class="wrap">
-  <p class="eyebrow">I soci fondatori</p>
-  <h2 style="margin-bottom:2.5rem">Tre mestieri diversi, la stessa acqua.</h2>
-  <div class="soci">
-    <article class="socio">
-      <h3>Gaetano Gentili</h3>
-      <p class="ruolo">Presidente · Medico veterinario</p>
-      <p>Veterinario dal 1988, ha cominciato occupandosi di animali in ambiente naturale. Oggi si dedica all'ecologia degli ambienti fluviali, in particolare all'ecoidraulica. Professore a contratto di Acquacoltura all'Università degli Studi di Milano.</p>
-      <p class="motto">«Mai fidarsi troppo!»</p>
-    </article>
-    <article class="socio">
-      <h3>Cesare Mario Puzzi</h3>
-      <p class="ruolo">Amministratore delegato · Medico veterinario</p>
-      <p>La sua professione è l'ittiologia, nata dalla passione per i pesci e per la pesca. Si occupa di corridoi fluviali, passaggi per pesci e riqualificazioni fluvio-lacustri. Professore a contratto di Gestione della fauna ittica d'acqua dolce a Milano.</p>
-      <p class="motto">«Credi in quello che fai!»</p>
-    </article>
-    <article class="socio">
-      <h3>Massimo Sartorelli</h3>
-      <p class="ruolo">Amministratore delegato · Ingegnere civile</p>
-      <p>Ingegnere per la difesa del suolo e la pianificazione territoriale, indirizzo ambientale. Iscritto agli Ordini degli Ingegneri di Varese e del Canton Ticino.</p>
-      <p class="todo" style="margin-top:1.2rem;font-size:.85rem">Biografia e motto da completare.</p>
-    </article>
+  <p class="eyebrow">Il team</p>
+  <h2 style="margin-bottom:1.5rem">Tre soci e le persone con cui lavorano.</h2>
+  <div class="filtri" role="group" aria-label="Filtra il team">
+    <button type="button" class="attivo" data-f="tutti">Tutti</button>
+    <button type="button" data-f="soci">Soci fondatori</button>
+    <button type="button" data-f="graia">Team GRAIA</button>
+    <button type="button" data-f="blu">BLU Progetti</button>
   </div>
-  <p class="todo" style="margin-top:3rem">Nel sito attuale tutto il team ha una scheda con foto e biografia (più di 35 persone). Nella versione definitiva: un elenco filtrabile per area, con la stessa scheda.</p>
+  <div class="team-grid"><article class="membro" id="gentili" data-gruppo="soci">
+  <img src="img/team/gentili.jpg" alt="Ritratto di Gaetano Gentili" loading="lazy" width="350" height="360">
+  <h3>Gaetano Gentili</h3>
+  <p class="ruolo">Presidente</p>
+  <p class="attivita-prof">Ecologia degli ambienti acquatici; professore a contratto del corso di Acquacoltura all&#x27;Università degli Studi di Milano</p>
+  <p class="motto">«Mai fidarsi troppo!»</p>
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Dottore in Medicina Veterinaria, iscritto all&#x27;Ordine dei Medici Veterinari della Provincia di Varese con il n. 232.</p>
+    <p>Mi chiamo Gaetano Gentili, sono veterinario dal 1988 e insieme ad amici e colleghi ho fondato GRAIA nel 1991. Ho cominciato la mia professione occupandomi di animali in ambiente naturale, poi la mia attività si è sempre più indirizzata verso l&#x27;ecologia degli ambienti fluviali, con particolare riferimento all&#x27;ecoidraulica. Le responsabilità, anche amministrative, in GRAIA mi portano comunque a seguire progetti più diversi nell&#x27;ambito della tutela e della gestione degli ambienti e delle risorse naturali. Ho la fortuna di lavorare con colleghi ed amici dalle formazioni e professionalità più diverse e questo non solo mi ha arricchito culturalmente ma mi consente di fare un lavoro straordinariamente vario e diverso quasi ogni giorno.</p>
+  </details>
+</article><article class="membro" id="puzzi" data-gruppo="soci">
+  <img src="img/team/puzzi.jpg" alt="Ritratto di Cesare Mario Puzzi" loading="lazy" width="350" height="360">
+  <h3>Cesare Mario Puzzi</h3>
+  <p class="ruolo">Amministratore delegato</p>
+  <p class="attivita-prof">Ittiologia; professore a contratto del corso di Gestione della fauna ittica selvatica d&#x27;acqua dolce all&#x27;Università degli Studi di Milano</p>
+  <p class="motto">«Credi in quello che fai!»</p>
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Dottore in Medicina Veterinaria, iscritto all&#x27;Ordine dei Medici Veterinari della Provincia di Milano con il n. 1648.</p>
+    <p>Mi chiamo Cesare Mario Puzzi, sono veterinario dal 1989 e insieme ad amici e colleghi ho fondato GRAIA nel 1991. La mia professione è l&#x27;ittiologia, nata dalla mia naturale passione per i pesci e per la pesca. Con gli anni e con un po&#x27; di esperienza acquisita grazie al lavoro multidisciplinare e alla necessità di capire anche i punti di vista di ingegneri, paesaggisti, agronomi, forestali, naturalisti, geologi, biologi, zootecnici e di molti altri professionisti, oggi mi occupo di progetti ambientali, il cui filo conduttore è sempre l&#x27;acqua. I corridoi fluviali e i passaggi per pesci, con le riqualifiche fluvio-lacustri, sono i temi che mi coinvolgono maggiormente e che mi emozionano ogni giorno.</p>
+  </details>
+</article><article class="membro" id="sartorelli" data-gruppo="soci">
+  <img src="img/team/sartorelli.jpg" alt="Ritratto di Massimo Sartorelli" loading="lazy" width="350" height="360">
+  <h3>Massimo Sartorelli</h3>
+  <p class="ruolo">Amministratore delegato</p>
+  <p class="attivita-prof">Ingegneria dell&#x27;ambiente e del territorio; professore a contratto del corso di Valutazione d&#x27;impatto ambientale all&#x27;Università dell&#x27;Insubria di Varese</p>
+  <p class="motto">«L&#x27;unione… con la passione, fanno la forza!»</p>
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Dottore in ingegneria civile per la difesa del suolo e la pianificazione territoriale (indirizzo ambientale), iscritto all&#x27;Ordine degli Ingegneri della Provincia di Varese con il n. 2096 e all&#x27;Ordine degli Ingegneri e Architetti del Canton Ticino con il n. 4271.</p>
+    <p>Mi chiamo Massimo Sartorelli, sono ingegnere ambientale dal 1995 e dallo stesso anno con i miei colleghi ed amici ho contribuito a far crescere Graia nell&#x27;ambito della progettazione ambientale e paesaggistica. Seguo con passione la realizzazione di importanti interventi di riqualificazione ambientale occupandomi del coordinamento di un team affiatato di bravi professionisti. Il continuo confronto con colleghi aventi competenze differenti, mi ha permesso in questi anni di crescere professionalmente con loro. Credo molto nel lavoro di squadra per affrontare le sfide che ci aspetteranno nei prossimi anni.</p>
+  </details>
+</article><article class="membro" id="trasforini" data-gruppo="graia">
+  <img src="img/team/trasforini.jpg" alt="Ritratto di Stefania Trasforini" loading="lazy" width="350" height="360">
+  <h3>Stefania Trasforini</h3>
+  <p class="ruolo">Dipendente</p>
+  <p class="attivita-prof">Ecologia applicata e conservazione della natura</p>
+  <p class="motto">«Impariamo dalla natura!»</p>
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Dottore in Scienze Biologiche, iscritta all&#x27;Ordine Nazionale dei Biologi al n. 51042, Sezione A.</p>
+    <p>Mi chiamo Stefania Trasforini, ho una laurea in scienze biologiche e faccio parte del team dal 1998. Mi occupo di conservazione della biodiversità e riqualificazione ecologica, operando all&#x27;interno di progetti di conservazione e gestione della fauna e delle reti ecologiche ed anche nell&#x27;ambito della valutazione ambientale e della divulgazione. Le mie principali mansioni sono: la gestione ed il coordinamento interno di progetti, la redazione di rapporti tecnici, l&#x27;elaborazione ed interpretazione di dati biologici, territoriali e ambientali, la stesura di proposte di progetto in campo faunistico ed ecologico; la realizzazione di pacchetti informatici per la gestione di dati ambientali e territoriali, la redazione e progettazione grafica di prodotti stampati e digitali destinati alla divulgazione e sensibilizzazione.</p>
+  </details>
+</article><article class="membro" id="ippoliti" data-gruppo="graia">
+  <img src="img/team/ippoliti.jpg" alt="Ritratto di Alessandra Ippoliti" loading="lazy" width="350" height="360">
+  <h3>Alessandra Ippoliti</h3>
+  <p class="ruolo">Dipendente</p>
+  <p class="attivita-prof">Ecologia dei corpi idrici</p>
+  <p class="motto">«Chi la dura la vince!»</p>
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Dottore in Scienze Biologiche, iscritta all&#x27;Ordine Nazionale dei Biologi con il n. 53869, Sezione A.</p>
+    <p>Mi chiamo Alessandra Ippoliti, sono laureata in scienze biologiche e faccio parte del team dal 2002. Mi occupo di monitoraggio biologico degli ecosistemi acquatici, conservazione e gestione delle risorse ambientali e faunistiche, con particolare riferimento allo studio dei popolamenti ittici e del loro stato di conservazione. Le mie principali mansioni sono: redazione di rapporti tecnici in campo ittico ed ecologico; elaborazione e interpretazione di dati biologici, territoriali e ambientali; redazione di piani di gestione di aree protette; elaborazione di Studi di Incidenza e Studi di Impatto Ambientale; redazione e progettazione grafica di prodotti destinati alla divulgazione; attività di educazione ambientale e scientifica, dalle elementari alle scuole di specializzazione post-universitaria.</p>
+  </details>
+</article><article class="membro" id="luvie" data-gruppo="graia">
+  <img src="img/team/luvie.jpg" alt="Ritratto di Chiara Luviè" loading="lazy" width="350" height="360">
+  <h3>Chiara Luviè</h3>
+  <p class="ruolo">Dipendente</p>
+  <p class="attivita-prof">Valutazione e monitoraggio ambientale</p>
+  <p class="motto">«Non una parola d&#x27;ordine ma tre: collaborazione, organizzazione, determinazione.»</p>
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Dottore in Scienze Naturali. Master in «Gestione e conservazione dell&#x27;ambiente e della fauna».</p>
+    <p>Mi chiamo Chiara Luviè, ho una laurea in scienze naturali e ho conseguito il master in gestione e conservazione dell&#x27;ambiente e della fauna. Faccio parte del team dal 2006. Mi occupo principalmente di valutazione e monitoraggio ambientale. Le mie mansioni principali sono la gestione e il coordinamento di progetti, la stesura di relazioni, la redazione di cartografia tematica mediante sistemi informativi territoriali, l&#x27;organizzazione di banche dati ambientali, la stesura di proposte di progetti in campo ecologico.</p>
+  </details>
+</article><article class="membro" id="ballerio" data-gruppo="graia">
+  <img src="img/team/ballerio.jpg" alt="Ritratto di Alessandra Ballerio" loading="lazy" width="350" height="360">
+  <h3>Alessandra Ballerio</h3>
+  <p class="ruolo">Dipendente</p>
+  <p class="attivita-prof">Monitoraggio ambientale</p>
+  <p class="motto">«Organizzazione!»</p>
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Dottore in Scienze Ambientali.</p>
+    <p>Mi chiamo Alessandra Ballerio, ho una laurea in scienze ambientali e faccio parte del team dal 2010. Mi occupo di monitoraggio delle acque nell&#x27;ambito di progetti di valutazione degli effetti di sbarramenti e derivazioni idriche, di sperimentazione del deflusso minimo vitale e di analisi degli effetti della gestione del sedimento negli invasi artificiali. Le mie principali mansioni sono: la predisposizione di piani di monitoraggio, la stesura di progetti di gestione di invasi e di aste fluviali, l&#x27;elaborazione ed interpretazione di dati chimici, biologici ed ecotossicologici e la redazione di rapporti tecnici.</p>
+  </details>
+</article><article class="membro" id="bonatto" data-gruppo="graia">
+  <img src="img/team/bonatto.jpg" alt="Ritratto di Sonia Bonatto" loading="lazy" width="350" height="360">
+  <h3>Sonia Bonatto</h3>
+  <p class="ruolo">Dipendente</p>
+  <p class="attivita-prof">Biomonitoraggio</p>
+  <p class="motto">«La passione non è lavoro!»</p>
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Dottore in Scienze Biologiche.</p>
+    <p>Mi chiamo Sonia Bonatto, sono laureata in biologia e biologia marina. Faccio parte del team GRAIA dal 2010. Gestisco e coordino progetti di monitoraggio ambientale e progetti di riqualificazione ecologica, oltre a operare nel campo della valutazione di impatto ambientale e di incidenza. Per GRAIA, oltre a svolgere attività di monitoraggio e campionamento delle matrici biologiche, mi occupo della gestione e interpretazione dei dati chimici e biologici e della redazione di rapporti tecnici. Collaboro inoltre con enti pubblici e privati nell&#x27;ambito della stesura e attuazione di progetti di conservazione e gestione delle reti ecologiche.</p>
+  </details>
+</article><article class="membro" id="tresoldi" data-gruppo="blu">
+  <img src="img/team/tresoldi.jpg" alt="Ritratto di Elisa Tresoldi" loading="lazy" width="350" height="360">
+  <h3>Elisa Tresoldi</h3>
+  <p class="ruolo">Dipendente di BLU Progetti srl</p>
+  <p class="attivita-prof">Progettazione e direzione lavori</p>
+  
+  <details><summary>Titolo di studio e biografia</summary>
+    <p><strong>Titolo di studio.</strong> Geometra.</p>
+    <p>Mi chiamo Elisa Tresoldi, sono diplomata come geometra e sono dipendente della società BluProgetti dalla fine del 2013. Lavoro a stretto contatto con il gruppo di ingegneri consulenti della società, occupandomi con loro della progettazione e della Direzione Lavori nell&#x27;ambito di interventi di riqualificazione ambientale, sistemi di fitodepurazione, realizzazione di passaggi per la risalita per la fauna ittica e altri interventi nel campo dell&#x27;ingegneria ambientale e naturalistica.</p>
+  </details>
+</article></div>
+  <p class="todo" style="margin-top:2.5rem">Il sito attuale presenta nove persone con scheda; la società ne conta più di 35 tra dipendenti e collaboratori. Le altre schede vanno aggiunte con il materiale di GRAIA (foto, ruolo, breve profilo). Le foto sono quelle già pubblicate.</p>
 </div></section>
+<script>
+document.querySelectorAll('.filtri button').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('.filtri button').forEach(function(x){x.classList.remove('attivo')});b.classList.add('attivo');
+  var f=b.dataset.f;document.querySelectorAll('.membro').forEach(function(m){m.hidden=!(f==='tutti'||m.dataset.gruppo===f)});});});
+if(location.hash){var t=document.querySelector(location.hash);if(t){var d=t.querySelector('details');if(d)d.open=true;}}
+</script>
 </main>
 <footer class="site">
   <div class="wrap">
@@ -72,25 +158,8 @@
         <p>Tel. <a href="tel:+390332961097">+39 0332 961 097</a><br><a href="mailto:info@graia.eu">info@graia.eu</a> · PEC graia@pec.it</p>
         <p class="partner">Graia è partner di Life Natura<br><img src="img/life-natura.png" alt="Life Natura"></p>
       </div>
-      <div>
-        <h4>Il sito</h4>
-        <ul>
-          <li><a href="attivita.html">Le nostre attività</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blu-progetti.html">BLU Progetti</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="chi-siamo.html">Chi siamo</a></li>
-          <li><a href="contatti.html">Contatti</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Documenti</h4>
-        <ul>
-          <li><a href="https://www.graia.eu/wp-content/uploads/2017/07/Interventi-idraulici-ittiocompatibili.pdf">Interventi idraulici ittiocompatibili: linee guida (Regione Lombardia, 2011)</a></li>
-          <li><a href="https://www.graia.eu/proteggiamo-la-zsc-lago-la-vota/">Proteggiamo la ZSC Lago la Vota</a></li>
-          <li><a href="proposta.html">Cookie policy e privacy: da rifare</a></li>
-        </ul>
-      </div>
+      <div><h4>Il sito</h4><ul><li><a href="attivita.html">Le nostre attività</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blu-progetti.html">BLU Progetti</a></li><li><a href="news.html">News</a></li><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="contatti.html">Contatti</a></li></ul></div>
+      <div><h4>Documenti</h4><ul><li><a href="documenti.html">Download</a></li><li><a href="privacy.html">Privacy e cookie</a></li><li><a href="cerca.html">Cerca nel sito</a></li></ul></div>
     </div>
     <p class="legale">P. IVA 10454870154. Gli aiuti di Stato e gli aiuti de minimis ricevuti dalla nostra impresa sono contenuti nel Registro nazionale degli aiuti di Stato di cui all'art. 52 della L. 234/2012 e consultabili sulla pagina del RNA, inserendo come chiave di ricerca il codice fiscale della società. Il CF di GRAIA è 10454870154 e quello di Blu Progetti è 02935220125.</p>
   </div>

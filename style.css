@@ -214,3 +214,87 @@ footer.site .partner img{height:34px;background:#fff;padding:.35rem .6rem;border
 .caso img.logo-caso.larga{aspect-ratio:auto;padding:1.4rem 1rem}
 .casi{align-items:start}
 .caso img.poster-caso{aspect-ratio:auto;object-fit:contain}
+
+/* ---- pagine aggiunte: dettaglio attività, news, team, ricerca ---- */
+.skip{position:absolute;left:-999px;top:0;background:var(--abisso);color:#fff;padding:.6rem 1rem;z-index:50}
+.skip:focus{left:8px;top:8px}
+[hidden]{display:none!important}
+
+.det{display:grid;grid-template-columns:7fr 4fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.prosa{font-size:1.04rem;line-height:1.7;max-width:68ch}
+.prosa.solo{margin:0 auto 0 0}
+.prosa h2{font-size:1.7rem;margin:2rem 0 .8rem}
+.prosa h3{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.prosa p,.prosa ul,.prosa ol{margin:0 0 1.1em}
+.prosa img{max-width:100%;height:auto;margin:1.2rem 0}
+.prosa table{border-collapse:collapse;width:100%;font-size:.95rem}
+.prosa td,.prosa th{border:1px solid var(--linea);padding:.5rem .7rem;vertical-align:top}
+.lato{background:var(--acqua-pallido);padding:1.6rem 1.6rem 1.2rem;border-top:3px solid var(--verde)}
+.lato h3{font:600 .78rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--verde-scuro);margin:1.4rem 0 .6rem}
+.lato h3:first-of-type{margin-top:0}
+.lato ul{padding-left:1.1rem;margin:0 0 1rem}
+.lato li{margin:.45rem 0;font-size:.97rem}
+.intro-serv{font-family:var(--serif);font-size:1.15rem;line-height:1.4;margin:0 0 1.4rem}
+.galleria{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem;margin-top:1.5rem}
+.galleria img{width:100%;aspect-ratio:4/3;object-fit:cover;margin:0}
+.nav-pagine{display:flex;justify-content:space-between;gap:2rem;margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--linea);font-weight:600;font-size:.95rem}
+.nav-pagine a{max-width:46%;text-decoration:none;color:var(--verde-scuro)}
+.nav-pagine a:hover{text-decoration:underline}
+.elenco-att{list-style:none;padding:0;margin:1.2rem 0 0;border-top:1px solid var(--linea)}
+.elenco-att li{padding:.55rem 0;border-bottom:1px solid var(--linea)}
+.elenco-att a{text-decoration:none;font-weight:500}
+.elenco-att a:hover{text-decoration:underline}
+.sezione-attivita ul.elenco-att{padding-left:0;color:inherit}
+.fig-news{margin:0 0 2rem}
+.fig-news img{width:100%;max-height:420px;object-fit:cover}
+
+.news-elenco{max-width:900px}
+.anno{font:500 1.9rem var(--serif);margin:2.8rem 0 .4rem;padding-bottom:.4rem;border-bottom:1px solid var(--inchiostro)}
+.anno:first-child{margin-top:0}
+.news-riga{display:grid;grid-template-columns:10rem 1fr;gap:1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--linea)}
+.news-riga time{font-size:.88rem;color:var(--grigio);padding-top:.3rem}
+.news-riga h3 a{text-decoration:none;color:var(--inchiostro)}
+.news-riga h3 a:hover{color:var(--verde-scuro);text-decoration:underline}
+.news-riga p{margin:.4rem 0 0;color:var(--grigio);font-size:.96rem}
+
+.filtri{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.filtri button{font:500 .9rem var(--sans);padding:.5rem 1rem;border:1px solid var(--linea);background:#fff;color:var(--inchiostro);border-radius:999px;cursor:pointer}
+.filtri button:hover{border-color:var(--verde-scuro)}
+.filtri button.attivo{background:var(--verde-scuro);border-color:var(--verde-scuro);color:#fff}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 2rem}
+.membro img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 20%;margin-bottom:1rem;background:var(--acqua-chiaro)}
+.membro h3{font-size:1.35rem}
+.membro .ruolo{font-size:.82rem;color:var(--verde-scuro);font-weight:600;margin:.25rem 0 .6rem}
+.membro .attivita-prof{font-size:.94rem;color:var(--grigio);margin:0 0 .6rem}
+.membro .motto{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.35;color:var(--abisso);margin:.6rem 0}
+.membro details{margin-top:.8rem;font-size:.94rem;color:var(--grigio)}
+.membro summary{cursor:pointer;color:var(--verde-scuro);font-weight:600}
+.membro:target{outline:2px solid var(--verde);outline-offset:8px}
+
+.risultati{list-style:none;padding:0;margin:0}
+.risultati li{padding:1rem 0;border-bottom:1px solid var(--linea)}
+.risultati a{font:500 1.2rem var(--serif);color:var(--inchiostro);text-decoration:none}
+.risultati a:hover{color:var(--verde-scuro);text-decoration:underline}
+.risultati p{margin:.3rem 0 0;font-size:.92rem;color:var(--grigio)}
+.tipo{font:600 .72rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--verde-scuro);margin-right:.5rem}
+
+.check{list-style:none;padding:0;margin:0;border-top:1px solid var(--inchiostro)}
+.check li{padding:1rem 0 1rem 2rem;border-bottom:1px solid var(--linea);position:relative}
+.check li::before{content:"";position:absolute;left:.2rem;top:1.35rem;width:.9rem;height:.9rem;border:2px solid var(--verde);border-radius:2px}
+.passi{counter-reset:p;list-style:none;padding:0;margin:0;max-width:760px}
+.passi li{counter-increment:p;padding:1rem 0 1rem 3.2rem;border-top:1px solid var(--linea);position:relative}
+.passi li::before{content:counter(p);position:absolute;left:0;top:.9rem;font:500 1.6rem var(--serif);color:var(--verde)}
+.caso .ruolo a{font-weight:500}
+
+@media (max-width:920px){
+  .det{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .news-riga{grid-template-columns:1fr;gap:.2rem}
+  .nav-pagine{flex-direction:column;gap:1rem}
+  .nav-pagine a{max-width:none}
+}
+@media (max-width:560px){.team-grid{grid-template-columns:1fr}}
+@media print{.bozza,header.site,footer.site,.burger,.nav-pagine{display:none}}
+.galleria figure{margin:0}
+.galleria figcaption{font-size:.82rem;color:var(--grigio);margin-top:.3rem}
+.prosa .galleria img{margin:0}

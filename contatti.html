@@ -6,22 +6,25 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Contatti · GRAIA</title>
 <meta name="description" content="Come raggiungere GRAIA a Varano Borghi (VA) e come contattarci.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<meta property="og:title" content="Contatti · GRAIA">
+<meta property="og:description" content="Come raggiungere GRAIA a Varano Borghi (VA) e come contattarci.">
+<meta property="og:image" content="img/luccio.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
 <div class="bozza"><b>Bozza di proposta</b>: non è il sito ufficiale di GRAIA. Testi e immagini sono ripresi da graia.eu a solo scopo dimostrativo. <a href="proposta.html" style="color:#fff">Cosa cambia →</a></div>
 <header class="site">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="GRAIA, home"><img src="img/logo.png" alt="GRAIA" width="145" height="58"></a>
     <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
     <nav class="main" id="menu" aria-label="Principale"><ul><li><a href="attivita.html">Attività</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blu-progetti.html">BLU Progetti</a></li><li><a href="news.html">News</a></li><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="contatti.html" aria-current=page>Contatti</a></li></ul></nav>
-    <span class="lang"><b>IT</b> · EN</span>
+    <span class="lang"><a href="cerca.html">Cerca</a> &nbsp;·&nbsp; <b>IT</b> · <a href="en/contatti.html" hreflang="en" lang="en">EN</a></span>
   </div>
 </header>
-<main>
+<main id="contenuto">
 <section class="hero interna" style="padding:0">
   <div class="testo">
     <p class="eyebrow">Contatti</p>
@@ -41,18 +44,32 @@
     <h2 style="font-size:1.6rem;margin:3rem 0 1rem">Come arrivare</h2>
     <p><strong>In auto.</strong> Da Milano, A8 verso Varese. Dopo la barriera di Lainate seguire Varese/Gravellona Toce (A26), uscire a Vergiate/Sesto Calende e imboccare la SS-629 verso Laveno-Luino. Al primo semaforo a destra in via San Rocco a Corgeno di Vergiate, poi a sinistra sulla SP-18 lungo il lago di Comabbio. La sede è sulla sinistra, circa 200 m dopo l'ingresso a Varano Borghi.</p>
     <p><strong>In treno.</strong> Stazioni FS più vicine: Ternate (si raggiunge a piedi), Vergiate e Sesto Calende.</p>
+    <p><a class="link-freccia" href="https://www.openstreetmap.org/search?query=Viale%20Repubblica%201%20Varano%20Borghi">Apri la mappa</a></p>
   </div>
   <div>
-    <form class="todo" onsubmit="return false" style="border:0;padding:0">
-      <p class="eyebrow">Scrivici (modulo di esempio)</p>
-      <p style="margin-bottom:.4rem"><label for="n">Nome</label><br><input id="n" style="width:100%;padding:.7rem;border:1px solid var(--linea);font:inherit"></p>
-      <p style="margin-bottom:.4rem"><label for="e">E-mail</label><br><input id="e" type="email" style="width:100%;padding:.7rem;border:1px solid var(--linea);font:inherit"></p>
-      <p><label for="m">Messaggio</label><br><textarea id="m" rows="5" style="width:100%;padding:.7rem;border:1px solid var(--linea);font:inherit"></textarea></p>
-      <button class="btn" type="button">Invia (non attivo)</button>
+    <form id="form-contatti" novalidate>
+      <p class="eyebrow">Scrivici</p>
+      <p style="margin-bottom:.8rem"><label for="n">Nome</label><br><input id="n" name="nome" autocomplete="name" required style="width:100%;padding:.7rem;border:1px solid var(--linea);font:inherit"></p>
+      <p style="margin-bottom:.8rem"><label for="e">E-mail</label><br><input id="e" name="email" type="email" autocomplete="email" required style="width:100%;padding:.7rem;border:1px solid var(--linea);font:inherit"></p>
+      <p style="margin-bottom:.8rem"><label for="o">Argomento</label><br>
+        <select id="o" name="oggetto" style="width:100%;padding:.7rem;border:1px solid var(--linea);font:inherit"><option>Richiesta di informazioni</option><option>Preventivo o collaborazione</option><option>Didattica e scuole</option><option>Stampa e comunicazione</option><option>Altro</option></select></p>
+      <p><label for="m">Messaggio</label><br><textarea id="m" name="messaggio" rows="6" required style="width:100%;padding:.7rem;border:1px solid var(--linea);font:inherit"></textarea></p>
+      <p style="font-size:.88rem;color:var(--grigio)"><label><input type="checkbox" id="c" required> Ho letto l'<a href="privacy.html">informativa privacy</a>.</label></p>
+      <button class="btn" type="submit">Prepara l'e-mail</button>
+      <p id="esito" role="status" style="margin-top:1rem;color:var(--verde-scuro);font-weight:600"></p>
     </form>
-    <p class="todo" style="margin-top:1.5rem">In questa bozza il modulo non invia nulla. Il sito attuale ha solo gli indirizzi e-mail.</p>
+    <p class="todo" style="margin-top:1.5rem">Il modulo compila un'e-mail per <strong>info@graia.eu</strong> nel programma di posta di chi scrive: non c'è un server che conservi i messaggi, quindi nessun dato passa da questo sito. Per un invio diretto servirà un servizio di ricezione, da scegliere con GRAIA.</p>
   </div>
 </div></section>
+<script>
+document.getElementById('form-contatti').addEventListener('submit',function(ev){
+  ev.preventDefault();var f=ev.target,esito=document.getElementById('esito');
+  if(!f.nome.value.trim()||!f.email.checkValidity()||!f.email.value||!f.messaggio.value.trim()||!document.getElementById('c').checked){esito.style.color='#a33';esito.textContent='Compila nome, e-mail e messaggio e conferma di aver letto l\'informativa.';return;}
+  var corpo=f.messaggio.value+'\n\n—\n'+f.nome.value+' ('+f.email.value+')';
+  location.href='mailto:info@graia.eu?subject='+encodeURIComponent(f.oggetto.value)+'&body='+encodeURIComponent(corpo);
+  esito.style.color='';esito.textContent='Si apre il tuo programma di posta con il messaggio pronto da inviare.';
+});
+</script>
 </main>
 <footer class="site">
   <div class="wrap">
@@ -63,25 +80,8 @@
         <p>Tel. <a href="tel:+390332961097">+39 0332 961 097</a><br><a href="mailto:info@graia.eu">info@graia.eu</a> · PEC graia@pec.it</p>
         <p class="partner">Graia è partner di Life Natura<br><img src="img/life-natura.png" alt="Life Natura"></p>
       </div>
-      <div>
-        <h4>Il sito</h4>
-        <ul>
-          <li><a href="attivita.html">Le nostre attività</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blu-progetti.html">BLU Progetti</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="chi-siamo.html">Chi siamo</a></li>
-          <li><a href="contatti.html">Contatti</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Documenti</h4>
-        <ul>
-          <li><a href="https://www.graia.eu/wp-content/uploads/2017/07/Interventi-idraulici-ittiocompatibili.pdf">Interventi idraulici ittiocompatibili: linee guida (Regione Lombardia, 2011)</a></li>
-          <li><a href="https://www.graia.eu/proteggiamo-la-zsc-lago-la-vota/">Proteggiamo la ZSC Lago la Vota</a></li>
-          <li><a href="proposta.html">Cookie policy e privacy: da rifare</a></li>
-        </ul>
-      </div>
+      <div><h4>Il sito</h4><ul><li><a href="attivita.html">Le nostre attività</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blu-progetti.html">BLU Progetti</a></li><li><a href="news.html">News</a></li><li><a href="chi-siamo.html">Chi siamo</a></li><li><a href="contatti.html">Contatti</a></li></ul></div>
+      <div><h4>Documenti</h4><ul><li><a href="documenti.html">Download</a></li><li><a href="privacy.html">Privacy e cookie</a></li><li><a href="cerca.html">Cerca nel sito</a></li></ul></div>
     </div>
     <p class="legale">P. IVA 10454870154. Gli aiuti di Stato e gli aiuti de minimis ricevuti dalla nostra impresa sono contenuti nel Registro nazionale degli aiuti di Stato di cui all'art. 52 della L. 234/2012 e consultabili sulla pagina del RNA, inserendo come chiave di ricerca il codice fiscale della società. Il CF di GRAIA è 10454870154 e quello di Blu Progetti è 02935220125.</p>
   </div>
