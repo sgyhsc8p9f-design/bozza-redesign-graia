@@ -1,0 +1,186 @@
+/* GRAIA — bozza di proposta. Colori del sito attuale, estratti dal suo CSS. */
+:root{
+  --verde:#799E50;        /* colore link del sito attuale */
+  --verde-scuro:#648242;  /* hover del sito attuale; usato per testo e bottoni (contrasto AA) */
+  --verde-chiaro:#9FBB7F; /* colore del logo */
+  --acqua:#6BA1B9;
+  --acqua-chiaro:#C9E5F1; /* barra del menu attuale */
+  --acqua-pallido:#F0F9FD;
+  --abisso:#1F3B47;       /* tono scuro della stessa tinta dell'azzurro, per le sezioni profonde */
+  --inchiostro:#1E2A24;
+  --grigio:#5B6660;       /* il #717171 attuale, scurito per la leggibilità */
+  --linea:#D9E3DA;
+  --serif:"Newsreader","Iowan Old Style","Georgia",serif;
+  --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --w:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.6 var(--sans);color:var(--inchiostro);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--verde-scuro);text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{color:var(--abisso)}
+:focus-visible{outline:2px solid var(--abisso);outline-offset:3px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.5rem,5.4vw,4.4rem)}
+h2{font-size:clamp(1.9rem,3.4vw,2.8rem)}
+h3{font-size:1.45rem;line-height:1.2}
+p{margin:0 0 1em}
+.lead{font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.4}
+.eyebrow{font:600 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--verde-scuro);margin:0 0 1.1rem}
+
+/* fascia bozza */
+.bozza{background:var(--abisso);color:#cfe2ea;font-size:.8rem;text-align:center;padding:.5rem 1rem}
+.bozza b{color:#fff;font-weight:600}
+
+/* header */
+header.site{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--linea)}
+header.site .wrap{display:flex;align-items:center;gap:2rem;height:84px}
+.logo img{height:58px;width:auto}
+nav.main{margin-left:auto}
+nav.main ul{display:flex;gap:1.9rem;list-style:none;margin:0;padding:0}
+nav.main a{text-decoration:none;color:var(--inchiostro);font-size:.95rem;font-weight:500;padding:.4rem 0;border-bottom:2px solid transparent}
+nav.main a:hover,nav.main a[aria-current]{border-bottom-color:var(--verde)}
+.lang{font-size:.82rem;color:var(--grigio);white-space:nowrap}
+.lang b{color:var(--inchiostro);font-weight:600}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--linea);border-radius:6px;padding:.55rem .8rem;font:500 .9rem var(--sans);color:var(--inchiostro)}
+
+/* bottoni */
+.btn{display:inline-block;background:var(--verde-scuro);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;padding:.85rem 1.4rem;border-radius:3px;border:1px solid var(--verde-scuro)}
+.btn:hover{background:var(--abisso);border-color:var(--abisso);color:#fff}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn.ghost:hover{background:#fff;color:var(--abisso);border-color:#fff}
+.link-freccia{font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.link-freccia::after{content:" →"}
+
+/* hero */
+.hero{display:grid;grid-template-columns:5fr 6fr;min-height:min(78vh,720px);background:var(--abisso);color:#fff}
+.hero .testo{padding:clamp(2.5rem,6vw,5.5rem) clamp(1.5rem,4vw,4rem) clamp(2.5rem,5vw,4rem) max(28px,calc((100vw - var(--w))/2 + 28px));display:flex;flex-direction:column;justify-content:center}
+.hero .eyebrow{color:var(--verde-chiaro)}
+.hero h1{margin-bottom:1.4rem}
+.hero p{color:#d6e6ec;max-width:34ch;font-size:1.12rem}
+.hero .azioni{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+.hero .foto{position:relative;min-height:340px}
+.hero .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.hero .foto figcaption{position:absolute;right:1rem;bottom:.8rem;font-size:.72rem;color:#fff;opacity:.85;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.hero.interna{min-height:0;grid-template-columns:1fr}
+.hero.interna .testo{padding:clamp(3rem,6vw,5rem) 28px;max-width:var(--w);margin:0 auto;width:100%}
+.hero.interna h1{font-size:clamp(2.2rem,4.4vw,3.4rem);max-width:20ch}
+.hero.interna p{max-width:60ch}
+
+/* sezioni */
+section{padding:clamp(3.5rem,7vw,6rem) 0}
+section.pallida{background:var(--acqua-pallido)}
+section.acqua{background:var(--acqua-chiaro)}
+.due{display:grid;grid-template-columns:5fr 7fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.sticky{position:sticky;top:110px}
+
+/* numeri / fatti: elenco, non card */
+.fatti{margin:2rem 0 0;padding:0;list-style:none;border-top:1px solid var(--linea)}
+.fatti li{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--linea);align-items:baseline}
+.fatti .k{font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--verde-scuro)}
+.fatti .v{color:var(--inchiostro)}
+
+/* attività */
+.attivita{list-style:none;margin:0;padding:0;border-top:1px solid var(--inchiostro)}
+.attivita li{display:grid;grid-template-columns:4rem 1fr 1.25fr;gap:1.5rem;padding:1.6rem 0;border-bottom:1px solid var(--linea);align-items:baseline}
+.attivita .n{font-family:var(--serif);color:var(--verde);font-size:1.3rem}
+.attivita p{margin:0;color:var(--grigio);font-size:.98rem}
+.attivita .tag{display:block;margin-top:.5rem;font-size:.82rem;color:var(--verde-scuro)}
+
+/* progetti */
+.progetto-grande{display:grid;grid-template-columns:7fr 5fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-bottom:3.5rem}
+.progetto-grande img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.progetto-grande .meta,.riga-progetto .meta{font-size:.82rem;color:var(--grigio);margin-bottom:.6rem}
+.righe-progetti{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;border-top:1px solid var(--linea);padding-top:2.5rem}
+.riga-progetto img{width:100%;height:150px;object-fit:contain;object-position:left center;background:#fff;border:1px solid var(--linea);padding:.6rem;margin-bottom:1.2rem}
+.riga-progetto h3{margin-bottom:.5rem}
+
+/* BLU */
+.blu{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.blu h2 span{color:var(--abisso)}
+
+/* committenti */
+.committenti{columns:3;column-gap:2.5rem;font-family:var(--serif);font-size:1.12rem;line-height:1.35;margin:0;padding:0;list-style:none}
+.committenti li{break-inside:avoid;padding:.42rem 0;border-top:1px solid var(--linea)}
+.committenti small{display:block;font:400 .78rem var(--sans);color:var(--grigio)}
+.gruppo{margin-top:3rem}
+.gruppo:first-of-type{margin-top:0}
+.gruppo h3{font:600 .78rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--verde-scuro);margin-bottom:1rem}
+
+/* news */
+.news-lista{list-style:none;margin:0;padding:0;border-top:1px solid var(--inchiostro)}
+.news-lista li{display:grid;grid-template-columns:9rem 1fr;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid var(--linea)}
+.news-lista time{font-size:.88rem;color:var(--grigio);padding-top:.35rem}
+.news-lista h3 a{text-decoration:none;color:var(--inchiostro)}
+.news-lista h3 a:hover{color:var(--verde-scuro);text-decoration:underline}
+.news-lista p{margin:.4rem 0 0;color:var(--grigio);font-size:.98rem}
+
+/* team */
+.soci{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.socio{border-top:3px solid var(--verde);padding-top:1.2rem}
+.socio .ruolo{font-size:.82rem;color:var(--verde-scuro);font-weight:600;margin:.3rem 0 1rem}
+.socio .motto{font-family:var(--serif);font-style:italic;font-size:1.2rem;line-height:1.35;margin:1.2rem 0 0;color:var(--abisso)}
+.socio p{font-size:.96rem;color:var(--grigio)}
+
+/* blocchi di testo e immagini */
+.testo-lungo{max-width:62ch}
+.fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig figcaption{font-size:.8rem;color:var(--grigio);margin-top:.5rem}
+.coppia{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.sezione-attivita{display:grid;grid-template-columns:5fr 6fr;gap:clamp(1.5rem,5vw,4rem);padding:3rem 0;border-top:1px solid var(--linea);align-items:start}
+.sezione-attivita:nth-of-type(even) .fig{order:2}
+.sezione-attivita ul{padding-left:1.1rem;color:var(--grigio)}
+.sezione-attivita li{margin:.25rem 0}
+
+/* contatti */
+.dati{display:grid;grid-template-columns:auto 1fr;gap:.6rem 1.5rem;margin:0}
+.dati dt{font-weight:600;color:var(--grigio);font-size:.9rem}
+.dati dd{margin:0}
+
+/* pagina proposta */
+.confronto{width:100%;border-collapse:collapse;font-size:.98rem}
+.confronto th,.confronto td{text-align:left;vertical-align:top;padding:1rem 1.2rem 1rem 0;border-bottom:1px solid var(--linea)}
+.confronto th{font:600 .78rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--grigio);border-bottom:1px solid var(--inchiostro)}
+.confronto td:first-child{font-weight:600;width:20%}
+.palette{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.2rem 0 0;padding:0;list-style:none}
+.palette li{width:128px;font-size:.78rem;line-height:1.35}
+.palette i{display:block;height:64px;border:1px solid rgba(0,0,0,.1);margin-bottom:.4rem}
+.todo{border-left:3px solid var(--acqua);padding:.2rem 0 .2rem 1.2rem;color:var(--grigio)}
+
+/* footer */
+footer.site{background:var(--abisso);color:#cfe2ea;padding:4rem 0 2rem;font-size:.92rem}
+footer.site a{color:#fff}
+footer.site .griglia{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem}
+footer.site h4{font:600 .78rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--verde-chiaro);margin:0 0 1rem}
+footer.site ul{list-style:none;margin:0;padding:0}
+footer.site li{margin:.35rem 0}
+footer.site .logo-footer{background:#fff;display:inline-block;padding:.5rem .8rem;border-radius:3px;margin-bottom:1.2rem}
+footer.site .logo-footer img{height:46px}
+footer.site .legale{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.18);font-size:.8rem;color:#9fb9c4;max-width:90ch}
+footer.site .partner img{height:34px;background:#fff;padding:.35rem .6rem;border-radius:3px;margin-top:1rem}
+
+/* mobile */
+@media (max-width:920px){
+  .burger{display:block}
+  .lang{display:none}
+  nav.main{position:absolute;top:84px;left:0;right:0;background:#fff;border-bottom:1px solid var(--linea);display:none;margin:0}
+  nav.main.aperto{display:block}
+  nav.main ul{flex-direction:column;gap:0;padding:.5rem 28px 1rem}
+  nav.main a{display:block;padding:.8rem 0;border-bottom:1px solid var(--linea)}
+  .hero{grid-template-columns:1fr}
+  .hero .testo{padding:3rem 28px}
+  .hero .foto{min-height:300px;order:-1}
+  .due,.progetto-grande,.blu,.sezione-attivita,.righe-progetti,.soci,footer.site .griglia{grid-template-columns:1fr}
+  .sezione-attivita:nth-of-type(even) .fig{order:0}
+  .sticky{position:static}
+  .attivita li{grid-template-columns:2.5rem 1fr}
+  .attivita li p{grid-column:2}
+  .committenti{columns:1}
+  .news-lista li{grid-template-columns:1fr;gap:.2rem}
+  .coppia{grid-template-columns:1fr}
+  .fatti li{grid-template-columns:5.5rem 1fr}
+  .confronto{display:block;overflow-x:auto}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
